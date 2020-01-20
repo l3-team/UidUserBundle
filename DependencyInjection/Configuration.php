@@ -19,6 +19,8 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('l3_security');
+	$treeBuilder = new TreeBuilder('l3_security');
+	$rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('l3_security');
         
         return $treeBuilder;
     }
