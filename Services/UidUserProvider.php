@@ -5,6 +5,7 @@ namespace L3\Bundle\UidUserBundle\Services;
 use L3\Bundle\UidUserBundle\Entity\UidUser;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 
 class UidUserProvider implements UserProviderInterface {
 
@@ -32,6 +33,6 @@ class UidUserProvider implements UserProviderInterface {
     }
 
     public function supportsClass($class) {
-        return $class === 'L3\Bundle\UidLdapBundle\Entity\UidUser';
+        return UidUser::class === $class;
     }
 } 
