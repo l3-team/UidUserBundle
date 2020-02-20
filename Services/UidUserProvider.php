@@ -33,6 +33,6 @@ class UidUserProvider implements UserProviderInterface {
     }
 
     public function supportsClass($class) {
-        return $class === 'L3\Bundle\UidLdapBundle\Entity\UidUser';
+        return UidUser::class === $class;
     }
 } 
