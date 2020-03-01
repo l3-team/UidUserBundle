@@ -32,6 +32,12 @@ class UidUserProvider implements UserProviderInterface {
     }
 
     public function supportsClass($class) {
-        return $class === 'L3\Bundle\UidLdapBundle\Entity\UidUser';
+        $version_php = phpversion();
+        $version_php_float = floatval($version_php);
+        if ($version_php_float >= 5.5) {
+            return UidUser::class === $class;
+        } else {
+            return $class === 'L3\Bundle\UidUserBundle\Entity\UidUser';
+        }
     }
 } 
