@@ -1,6 +1,6 @@
 User Provider for CAS
 
-Allow use only UID (returned by CasBundle) for application Symfony2, Symfony3, Symfony4 and Symfony 5
+Allow use only UID (returned by CasBundle) for application Symfony2, Symfony3, Symfony4 and Symfony 5 and Symfony 6
 (uid is the id user returned by jasig cas sso server and by the l3-team/CasBundle (repository github) or l3/cas-bundle (repository packagist))
 
 Installation of the Bundle
@@ -34,7 +34,7 @@ class AppKernel extends Kernel
 }
 ```
 
-For Symfony 4 :
+For Symfony 4 and Symfony 5 and Symfony 6 :
 Verify if the line are present in config/bundles.php file (if not present, just add the line) :
 ```
 # config/bundles.php
@@ -55,7 +55,7 @@ security:
             id: uid_user_provider
 ```
 
-For Symfony 4 and Symfony 5 : in the firewall of your application, use the Bundle :
+For Symfony 4 and Symfony 5 and Symfony 6 : in the firewall of your application, use the Bundle :
 ```
 # config/packages/security.yaml
 security:
