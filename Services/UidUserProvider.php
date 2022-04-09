@@ -15,7 +15,7 @@ class UidUserProvider implements UserProviderInterface {
         $user = new UidUser();
         $user->setUid($identifier);
         $roles = Array();
-        if ($username === '__NO_USER__') {
+        if ($identifier === '__NO_USER__') {
             $roles = array('ROLE_ANON');
         } else {
             $roles = array('ROLE_ANON', 'ROLE_USER');
@@ -29,7 +29,7 @@ class UidUserProvider implements UserProviderInterface {
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
         }
 
-        return $this->loadUserByUsername($user->getUid());
+        return $this->loadUserByIdentifier($user->getUid());
     }
 
     public function supportsClass($class) {
