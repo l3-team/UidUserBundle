@@ -63,3 +63,14 @@ security:
         uid:
             id: uid_user_provider
 ```
+
+For Symfony 6:
+```
+# config/packages/security.yaml
+security:
+    providers:
+        uid_user_provider:
+            id: uid_user_provider
+```
+
+and specify ***uid_user_provider*** for the keys ***provider*** for your firewalls in security.yaml file
