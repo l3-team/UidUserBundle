@@ -11,9 +11,9 @@ class UidUserProvider implements UserProviderInterface {
 
     public function __construct() {}
 
-    public function loadUserByUsername($username) {
+    public function loadUserByIdentifier(string $identifier): UserInterface {
         $user = new UidUser();
-        $user->setUid($username);
+        $user->setUid($identifier);
         $roles = Array();
         if ($username === '__NO_USER__') {
             $roles = array('ROLE_ANON');
