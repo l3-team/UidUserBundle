@@ -5,9 +5,9 @@ Allow use only UID (returned by CasBundle) for application Symfony2, Symfony3, S
 
 Installation of the Bundle
 ---
-Simple add this line in the require in your composer.json :
+Install the Bundle with this command :
 ```
-"l3/uid-user-bundle": "~1.0"
+composer require l3/uid-user-bundle:~1.0
 ```
 Launch the command **composer update** to install the package.
 
