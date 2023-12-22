@@ -32,7 +32,7 @@ class UidUserProvider implements UserProviderInterface {
         return $this->loadUserByIdentifier($user->getUid());
     }
 
-    public function supportsClass($class) {
+    public function supportsClass(string $class): bool {
         return UidUser::class === $class;
     }
 } 
